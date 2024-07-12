@@ -11,11 +11,15 @@ const Equipos = ({ equipos }) => {
           <h3 className={styles.nameClub}>{equipo.nombre}</h3>
           <ul>
             {equipo.plantilla.map((jugador) => (
-              <li className={styles.container_list} key={jugador.id}>
-                <strong>{jugador.nombre}</strong>
-                <p>Altura: {jugador.Altura}m <br></br> Peso: {jugador.Peso}</p>
-                <br></br>
-              </li>
+          
+                <li className={styles.container_list} key={jugador.id}>
+                  <div>
+                    <strong>{jugador.nombre}</strong>
+                    <p>Altura: {jugador.Altura}m <br></br> Peso: {jugador.Peso}</p>
+                  </div>
+                  <img src={require(`${jugador.Imagen}`).default.src} alt="Imagen de jugador no disponible"></img>
+                  <br></br>
+                </li>
             ))}
           </ul>
         </div>
@@ -30,32 +34,43 @@ export default function Home() {
       "id": 1,
       "nombre": "Real Madrid",
       "plantilla": [
-        { "id": 1, "nombre": "Eden Hazard", "Altura": "1.75", "Peso": "74kg" },
-        { "id": 2, "nombre": "Gonzalo García", "Altura": "1.82", "Peso": "74kg" },
-        { "id": 3, "nombre": "Karim Benzema", "Altura": "1.85", "Peso": "81kg" },
+        { "id": 1, "nombre": "David Alaba", "Altura": "1.75", "Peso": "74kg", "Imagen": "./images/eq1/j1.png" },
+        { "id": 2, "nombre": "Fran García", "Altura": "1.82", "Peso": "74kg", "Imagen": "./images/eq1/j2.png" },
+        { "id": 3, "nombre": "Daniel Carvajal", "Altura": "1.85", "Peso": "81kg", "Imagen": "./images/eq1/j3.png" },
       ]
     },
     {
       "id": 2,
-      "nombre": "Barcelona",
+      "nombre": "Barcelona",  
       "plantilla": [
-        { "id": 1, "nombre": "Marc-André ter Stegen", "Altura": "1.75", "Peso": "74kg" },
-        { "id": 2, "nombre": "Iñigo Martinez", "Altura": "1.82", "Peso": "74kg" },
-        { "id": 3, "nombre": "Gavi", "Altura": "1.85", "Peso": "81kg" },
+        { "id": 1, "nombre": "Marc-André ter Stegen", "Altura": "1.75", "Peso": "74kg", "Imagen": "./images/eq2/j1.png" },
+        { "id": 2, "nombre": "Iñigo Martinez", "Altura": "1.82", "Peso": "74kg", "Imagen": "./images/eq2/j2.png" },
+        { "id": 3, "nombre": "Gavi", "Altura": "1.85", "Peso": "81kg", "Imagen": "./images/eq2/j3.png" },
       ]
     },
     {
       "id": 3,
-      "nombre": "Notre Dame",
+      "nombre": "Atlético de Madrid",
       "plantilla": [
-        { "id": 1, "nombre": "Antonio de Padua", "Altura": "1.75", "Peso": "70kg" },
-        { "id": 2, "nombre": "Francisco de Asís", "Altura": "1.82", "Peso": "80kg" },
-        { "id": 3, "nombre": "Tomás 'el Basado' Aquino", "Altura": "1.85", "Peso": "85kg" },
+        { "id": 1, "nombre": "Jan Oblak", "Altura": "1.75", "Peso": "70kg", "Imagen": "./images/eq3/j1.png" },
+        { "id": 2, "nombre": "Axel Witsel", "Altura": "1.82", "Peso": "80kg", "Imagen": "./images/eq3/j2.png" },
+        { "id": 3, "nombre": "Javí Galán", "Altura": "1.85", "Peso": "73kg", "Imagen": "./images/eq3/j3.png" },
+      ]
+    },
+    {
+      "id": 4,
+      "nombre": "Sevilla FC",
+      "plantilla": [
+        { "id": 1, "nombre": "Marco Dmitrovic", "Altura": "1.70", "Peso": "73kg", "Imagen": "./images/eq4/j1.png" },
+        { "id": 2, "nombre": "Kike Salas", "Altura": "1.83", "Peso": "83kg", "Imagen": "./images/eq4/j2.png" },
+        { "id": 3, "nombre": "Marcos Acuña", "Altura": "1.79", "Peso": "71kg", "Imagen": "./images/eq4/j3.png" },
       ]
     }
   ];
   return (
+
     <main className={styles.main}>
+
       <div>
         <h1>Mi Aplicación de Fútbol</h1>
         <Equipos equipos={equiposData}></Equipos>

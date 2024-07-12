@@ -9,6 +9,12 @@
 .container_list{
   list-style-type: none;
   padding:0;
+
+}
+
+li.container_list{
+  display:grid;
+  grid-template-columns: 60% 40%;
 }
 
 .list{
