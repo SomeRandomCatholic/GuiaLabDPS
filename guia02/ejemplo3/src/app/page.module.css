@@ -35,10 +35,21 @@
 .button {
   font-size: 1.2em;
   padding: 10px;
-  margin-right: 10px;
   border: 1px solid #ccc;
+  margin: 5px;
   border-radius: 5px;
   cursor: pointer;
+  width: 45%;
+}
+
+.reiniciar{
+  font-size: 1.2em;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin: 5px 0px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 97%;
 }
 
 .resultado {
