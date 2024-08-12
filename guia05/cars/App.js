@@ -1,30 +1,10 @@
-import React from "react";
-import {
-  SafeAreaView,
-  View,
-  FlatList,
-  StyleSheet,
-  Text,
-  StatusBar,
-  Image,
-} from "react-native";
+import React from 'react';
+import { SafeAreaView, FlatList, StatusBar, StyleSheet, Text, View, Image } from 'react-native';
 
 const DATA = [
-  {
-    id: "1",
-    title: "Toyota",
-    src: require("./src/img/toyota.jpg"),
-  },
-  {
-    id: "2",
-    title: "Mazda",
-    src: require("./src/img/mazda.jpg"),
-  },
-  {
-    id: "3",
-    title: "Mitsubishi",
-    src: require("./src/img/mitsubishi.jpg"),
-  },
+  { id: 1, title: 'Toyoya', src: require('./src/img/toyota.jpg') },
+  { id: 2, title: 'Mazda', src: require('./src/img/mazda.jpg')},
+  { id: 3, title: 'Mitsubishi', src:require('./src/img/mitsubishi.jpeg')},
 ];
 
 const Item = ({ title, img }) => (
@@ -35,7 +15,9 @@ const Item = ({ title, img }) => (
 );
 
 export default function App() {
+
   const renderItem = ({ item }) => (
+
     <Item title={item.title} img={item.src}></Item>
   );
 
@@ -44,7 +26,7 @@ export default function App() {
       <FlatList
         data={DATA}
         renderItem={renderItem}
-        keyExtractor={(item) => item.id}
+        keyExtractor={item => item.id}
       ></FlatList>
     </SafeAreaView>
   );
@@ -55,22 +37,25 @@ const styles = StyleSheet.create({
     flex: 1,
     marginTop: StatusBar.currentHeight || 0,
   },
+
   item: {
-    backgroundColor: "#f9c2ff",
+    backgroundColor: '#f9c2ff',
     padding: 20,
     marginVertical: 8,
     marginHorizontal: 16,
     alignItems: 'center',
   },
+
   title: {
     fontSize: 32,
   },
+
   img:{
-    width:200,
-    height:125,
+    width: 200,
+    height: 125,
     borderWidth:2,
     borderColor: '#d35647',
-    resizeMode:'contain',
-    margin:8
+    resizeMode: 'contain',
+    margin: 8
   }
 });
