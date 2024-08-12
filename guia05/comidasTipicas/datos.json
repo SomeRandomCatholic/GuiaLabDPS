@@ -1,0 +1,12 @@
+[
+    {"id": 1, "nombre": "Pupusas", "calorias": 300, "imagen": "https://www.comedera.com/wp-content/uploads/2023/05/Pupusas-de-queso-shutterstock_1803502444.jpg"},
+    {"id": 2, "nombre": "Tamal de Elote", "calorias": 200, "imagen": "https://www.tipicosmargoth.com/wp-content/uploads/2020/05/TAMAL-DE-ELOTE-TIPICOS-MARGOTH.jpg"},
+    {"id": 3, "nombre": "Elote Loco", "calorias": 300, "imagen": "https://www.196flavors.com/wp-content/uploads/2020/08/elote-loco-2-FP.jpeg"},
+    {"id": 4, "nombre": "Tamal de Gallina", "calorias": 350, "imagen": "https://www.lapupusafactory.com/wp-content/uploads/2021/07/Untitled-design-6.png"},
+    {"id": 5, "nombre": "Empanada", "calorias": 250, "imagen":"https://i.ytimg.com/vi/Rwk0S8Mn278/maxresdefault.jpg"},
+    {"id": 6, "nombre": "Yuca Frita", "calorias": 280, "imagen": "https://cdn0.recetasgratis.net/es/posts/4/6/6/yuca_frita_a_la_cubana_25664_600_square.jpg"},
+    {"id": 7, "nombre": "Torreja", "calorias": 450, "imagen": "https://www.riograndefoods.com/wp-content/uploads/2021/10/Salvadoran-Torrejas-1-scaled.jpg"},
+    {"id": 8, "nombre": "Jocotes en miel", "calorias": 63, "imagen":"https://img-global.cpcdn.com/recipes/20385574db78305f/400x400cq70/photo.jpg"},
+    {"id": 9, "nombre": "Mango en miel", "calorias": 500, "imagen": "https://buenprovecho.hn/wp-content/uploads/2019/04/MG_22299-copy.jpg"}
+    
+]
