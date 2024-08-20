@@ -6,6 +6,11 @@ export default function App() {
   const [venus, setVenus] = useState(false);
   const [tierra, setTierra] = useState(false);
   const [marte, setMarte] = useState(false);
+  const [jupiter, setJupiter] = useState(false);
+  const [saturno, setSaturno] = useState(false);
+  const [urano, setUrano] = useState(false);
+  const [neptuno, setNeptuno] = useState(false);
+
 
   return (
     <SafeAreaView style={styles.safe}>
@@ -102,11 +107,11 @@ export default function App() {
             <Text></Text>
             <Text style={styles.textoMo}>Masa: 6.4185 × 10^23 kg</Text>
             <Text></Text>
-            <Text style={styles.textoMo}>Densidad: 3,9335 g/cm³</Text>
+            <Text style={styles.textoMo}>Densidad: 3.9335 g/cm³</Text>
             <Text></Text>
             <Text style={styles.textoMo}>Distancia al Sol: 	228,000,000 km </Text>
             <Text></Text>
-            <Text style={styles.textoMo}>Año: 686.971 terrestres</Text>
+            <Text style={styles.textoMo}>Año: 686.971 días terrestres</Text>
             <Text></Text>
             <Text style={styles.textoMo}>Temperatura superficial: de -87 ºC a +20 ºC</Text>
             <Text></Text>
@@ -118,6 +123,108 @@ export default function App() {
         </View>
       </Modal>
 
+      <Modal transparent={true} animationType='slide' visible={jupiter}>
+        <View style={styles.vistaModal}>
+          <View style={styles.Modal}>
+            <Text style={styles.tituloModal}>JÚPITER</Text>
+            <Text></Text>
+            <Text style={styles.textoMo}>Diámetro: 142,984 km</Text>
+            <Text></Text>
+            <Text style={styles.textoMo}>Área Superficial: 6.41 × 10^10 km²</Text>
+            <Text></Text>
+            <Text style={styles.textoMo}>Masa: 1.899 × 10^27 kg</Text>
+            <Text></Text>
+            <Text style={styles.textoMo}>Densidad: 1,336 kg/m³</Text>
+            <Text></Text>
+            <Text style={styles.textoMo}>Distancia al Sol: 780,000,000 km </Text>
+            <Text></Text>
+            <Text style={styles.textoMo}>Año: 11.86 años terrestres</Text>
+            <Text></Text>
+            <Text style={styles.textoMo}>Temperatura superficial: de −163.15 ºC a −75.15 ºC</Text>
+            <Text></Text>
+            <Text style={styles.textoMo}>Lunas: 95 satélites naturales</Text>
+            <Text></Text>
+            <Image source={require('./src/img/jupiter2.jpg')} style={styles.img2}></Image>
+            <Button title="Cerrar" onPress={() => setJupiter(!jupiter)}></Button>
+          </View>
+        </View>
+      </Modal>
+
+
+      <Modal transparent={true} animationType='slide' visible={saturno}>
+        <View style={styles.vistaModal}>
+          <View style={styles.Modal}>
+            <Text style={styles.tituloModal}>SATURNO</Text>
+            <Text></Text>
+            <Text style={styles.textoMo}>Diámetro: 120,536 km</Text>
+            <Text></Text>
+            <Text style={styles.textoMo}>Área Superficial: 4.38 × 10^16 m²</Text>
+            <Text></Text>
+            <Text style={styles.textoMo}>Masa: 5.688 × 10^26 kg</Text>
+            <Text></Text>
+            <Text style={styles.textoMo}>Densidad: 690 kg/m³</Text>
+            <Text></Text>
+            <Text style={styles.textoMo}>Distancia al Sol: 1,430,000,000 km</Text>
+            <Text></Text>
+            <Text style={styles.textoMo}>Año: 29.46 años terrestres</Text>
+            <Text></Text>
+            <Text style={styles.textoMo}>Lunas: 146 satélites naturales</Text>
+            <Text></Text>
+            <Image source={require('./src/img/saturno2.jpg')} style={styles.img2}></Image>
+            <Button title="Cerrar" onPress={() => setSaturno(!saturno)}></Button>
+          </View>
+        </View>
+      </Modal>
+
+      <Modal transparent={true} animationType='slide' visible={urano}>
+        <View style={styles.vistaModal}>
+          <View style={styles.Modal}>
+            <Text style={styles.tituloModal}>URANO</Text>
+            <Text></Text>
+            <Text style={styles.textoMo}>Diámetro: 51.118 km</Text>
+            <Text></Text>
+            <Text style={styles.textoMo}>Área Superficial: 8.1156 x 10^9 km²</Text>
+            <Text></Text>
+            <Text style={styles.textoMo}>Masa: 8.686 × 10^25 kg</Text>
+            <Text></Text>
+            <Text style={styles.textoMo}>Densidad: 1.274 g/cm³</Text>
+            <Text></Text>
+            <Text style={styles.textoMo}>Distancia al Sol: 2,870,000,000 km </Text>
+            <Text></Text>
+            <Text style={styles.textoMo}>Año: 84 años terrestres</Text>
+            <Text></Text>
+            <Text style={styles.textoMo}>Lunas: 27 satélites naturales</Text>
+            <Text></Text>
+            <Image source={require('./src/img/urano2.jpg')} style={styles.img2}></Image>
+            <Button title="Cerrar" onPress={() => setUrano(!urano)}></Button>
+          </View>
+        </View>
+      </Modal>
+
+      <Modal transparent={true} animationType='slide' visible={neptuno}>
+        <View style={styles.vistaModal}>
+          <View style={styles.Modal}>
+            <Text style={styles.tituloModal}>NEPTUNO</Text>
+            <Text></Text>
+            <Text style={styles.textoMo}>Diámetro: 49,572 km</Text>
+            <Text></Text>
+            <Text style={styles.textoMo}>Área Superficial: 7.65 x 10^9 km²</Text>
+            <Text></Text>
+            <Text style={styles.textoMo}>Masa: 1.024 × 10^26 kg</Text>
+            <Text></Text>
+            <Text style={styles.textoMo}>Densidad: 1.64 g/cm³</Text>
+            <Text></Text>
+            <Text style={styles.textoMo}>Distancia al Sol: 4,500,000,000 km </Text>
+            <Text></Text>
+            <Text style={styles.textoMo}>Año: 165 años</Text>
+            <Text></Text>
+            <Text style={styles.textoMo}>Lunas: 16 satélites naturales</Text>
+            <Text></Text>
+            <Image source={require('./src/img/neptuno2.jpg')} style={styles.img2}></Image>
+            <Button title="Cerrar" onPress={() => setNeptuno(!neptuno)}></Button>
+          </View>
+        </View>
+      </Modal>
 
       <ScrollView>
         <View style={styles.contenedor}>
@@ -165,15 +272,20 @@ export default function App() {
           <Text style={styles.subtitulo}>Gigantes Gaseosos</Text>
           <Text style={styles.texto}>Son planetas gigantes con un centro rocoso, pero cuya masa es mayoritariamente gaseosa fluida, principalmente hidrógeno y helio: </Text>
           <View style={styles.planetas}>
-            <View style={styles.planeta}>
-              <Text style={styles.planetaT}>5. Júpiter</Text>
-              <Image style={styles.planetaI} source={require("./src/img/jupiter.jpg")} />
-            </View>
 
-            <View style={styles.planeta}>
-              <Text style={styles.planetaT}>6. Saturno</Text>
-              <Image style={styles.saturno} source={require("./src/img/saturno.jpg")} />
-            </View>
+            <TouchableHighlight style={styles.planeta} onPress={() => setJupiter(!jupiter)}>
+              <View style={styles.planeta}>
+                <Text style={styles.planetaT}>5. Júpiter</Text>
+                <Image style={styles.planetaI} source={require("./src/img/jupiter.jpg")} />
+              </View>
+            </TouchableHighlight>
+
+            <TouchableHighlight style={styles.planeta} onPress={() => setSaturno(!saturno)}>
+              <View style={styles.planeta}>
+                <Text style={styles.planetaT}>6. Saturno</Text>
+                <Image style={styles.saturno} source={require("./src/img/saturno.jpg")} />
+              </View>
+            </TouchableHighlight>
           </View>
 
         </View>
@@ -182,16 +294,20 @@ export default function App() {
           <Text style={styles.subtitulo}>Gigantes Helados</Text>
           <Text style={styles.texto}>Se diferencian de los gigantes gaseosos en que su composición de helio e hidrógeno es menor; y están constituidos principalmente por hielo, roca y gas:</Text>
           <View style={styles.planetas}>
-            <View style={styles.planeta}>
-              <Text style={styles.planetaT}>7. Urano</Text>
-              <Image style={styles.planetaI} source={require("./src/img/urano.png")} />
-            </View>
 
-            <View style={styles.planeta}>
-              <Text style={styles.planetaT}>8. Neptuno</Text>
-              <Image style={styles.planetaI} source={require("./src/img/neptuno.jpg")} />
-            </View>
+            <TouchableHighlight style={styles.planeta} onPress={() => setUrano(!urano)}>
+              <View style={styles.planeta}>
+                <Text style={styles.planetaT}>7. Urano</Text>
+                <Image style={styles.planetaI} source={require("./src/img/urano.png")} />
+              </View>
+            </TouchableHighlight>
 
+            <TouchableHighlight style={styles.planeta} onPress={() => setNeptuno(!neptuno)}>
+              <View style={styles.planeta}>
+                <Text style={styles.planetaT}>8. Neptuno</Text>
+                <Image style={styles.planetaI} source={require("./src/img/neptuno.jpg")} />
+              </View>
+            </TouchableHighlight>
           </View>
         </View>
       </ScrollView>
