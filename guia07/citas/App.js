@@ -57,12 +57,12 @@ const App = () =>{
         </View>
 
         <View style={styles.contenido}>
-          {mostrarForm ? (
+          {mostrarForm ? ( // true
             <>
             <Text style={styles.titulo}>Crear Nueva Cita</Text>
             <Formulario citas={citas} setCitas={setCitas} guardarMostrarForm={guardarMostrarForm} guardarCitasStorage={guardarCitasStorage}/>
             </>
-          ) : (
+          ) : ( // false
             <>
             <Text style={styles.titulo}>{citas.length > 0 ? 'Administra tus citas' : 'No hay citas, agrega una'}</Text>
             <FlatList 
