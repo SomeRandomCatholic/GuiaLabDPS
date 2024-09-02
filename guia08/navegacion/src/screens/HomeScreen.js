@@ -25,7 +25,7 @@ const images = [
   },
 ];
 
-export default function HomeScreen(/*{ navigation }*/) {
+export default function HomeScreen({/* navigation */}) {
   return (
     <View style={styles.container}>
       <View style={styles.header}>

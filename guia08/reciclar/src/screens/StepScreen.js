@@ -1,7 +1,7 @@
 import react from "react";
 import {View, Text, Button, StyleSheet} from 'react-native';
 
-const StepsScreen = ({step, description, onNextStep}) =>{
+const StepScreen = ({step, description, onNextStep}) =>{
     return(
         <View style={styles.container}>
             <Text style={styles.stepText}>Paso {step}</Text>
@@ -30,4 +30,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default StepsScreen;
+export default StepScreen;

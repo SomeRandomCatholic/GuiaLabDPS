@@ -1,7 +1,7 @@
 import react, { useState } from "react";
 import { View, Text, StyleSheet, Image, FlatList } from "react-native";
 
-export default function DetailsScreen(/*{ navigation }*/) {
+export default function DetailsScreen({ /*navigation */}) {
   const [projects, setProjects] = useState([
     {
       id: "1",
