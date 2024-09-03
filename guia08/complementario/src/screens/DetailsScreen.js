@@ -1,5 +1,6 @@
-import react, { useState } from "react";
+import react, { useState} from "react";
 import { View, Text, StyleSheet, Image, FlatList } from "react-native";
+
 
 export default function DetailsScreen({ navigation }) {
   const [projects, setProjects] = useState([
@@ -25,6 +26,9 @@ export default function DetailsScreen({ navigation }) {
       socialMedia: ["x", "linkedin"],
     },
   ]);
+
+
+
 
   const renderProjectItem = ({ item }) => (
     <View style={sytles.projectItem}>

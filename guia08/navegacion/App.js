@@ -2,7 +2,7 @@ import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import HomeScreen from './src/screens/HomeScreen';
 import DetailsScreen from './src/screens/DetailsScreen';
-/*import { createDrawerNavigator } from "@react-navigation/drawer";
+import { createDrawerNavigator } from "@react-navigation/drawer";
 
 
 const Drawer = createDrawerNavigator();
@@ -18,8 +18,8 @@ export default function App() {
   );
 }
 
-*/
 
+/*
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 const Tab = createBottomTabNavigator();
@@ -33,4 +33,4 @@ export default function App(){
       </Tab.Navigator>
     </NavigationContainer>
   )
-}  
+}  */
