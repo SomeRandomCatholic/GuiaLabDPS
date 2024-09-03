@@ -2,7 +2,8 @@ import react, { useState} from "react";
 import { View, Text, StyleSheet, Image, FlatList } from "react-native";
 
 
-export default function DetailsScreen({ navigation }) {
+const DetailsScreen = ({navigation }) => {
+  
   const [projects, setProjects] = useState([
     {
       id: "1",
@@ -69,6 +70,8 @@ export default function DetailsScreen({ navigation }) {
         </View>
     )
 };
+
+export default DetailsScreen;
 
 const sytles = StyleSheet.create({
     container: {
