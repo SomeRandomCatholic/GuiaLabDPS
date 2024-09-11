@@ -1,0 +1,74 @@
+[
+    {
+        "id": 7416501959472,
+        "nombre": "Folio",
+        "precio": 0.32,
+        "cantidad": 25,
+        "marca": "Office Depot",
+        "descripcion": "Folio de color naranja",
+        "reseñas": [
+            {
+                "usuario": "Carmen502",
+                "comentario": "Útil para guardar documentos"
+            },
+            {
+                "usuario": "Juan15",
+                "comentario": "Demasiado pequeño para documentos grandes"
+            }
+        ]
+    },
+    {
+        "id": 7501199404080,
+        "nombre": "Pegamento",
+        "precio": 1.25,
+        "cantidad": 15,
+        "marca": "Pritt",
+        "descripcion": "Cola blanca ideal para el papel y el cartón",
+        "reseñas": [
+            {
+                "usuario": "Salvador503",
+                "comentario": "No embarra las manos"
+            },
+            {
+                "usuario": "Mateo15",
+                "comentario": "Su olor es un poco pesado"
+            }
+        ]
+    },
+    {
+        "id": 7702111333666,
+        "nombre": "Cuaderno de espiral",
+        "precio": 12.50,
+        "cantidad": 4,
+        "marca": "Jean Book",
+        "descripcion": "Cuaderno multimateria anillado.",
+        "reseñas": [
+            {
+                "usuario": "Carlos29",
+                "comentario": "Perfecto para universitarios"
+            },
+            {
+                "usuario": "Mónica12",
+                "comentario": "No hay mucha variedad en los diseños"
+            }
+        ]
+    },
+    {
+        "id": 667888275120,
+        "nombre": "Papel tapiz",
+        "precio": 1,
+        "cantidad": 12,
+        "marca": "Gripeze",
+        "descripcion": "Papel tapiz color madera",
+        "reseñas": [
+            {
+                "usuario": "Susana21",
+                "comentario": "No me gusta el patrón."
+            },
+            {
+                "usuario": "Pedro12",
+                "comentario": "La pega facilita su uso"
+            }
+        ]
+    }
+]
