@@ -8,7 +8,7 @@ const Platos = ({ navigation }) => {
     const [platillos, setPlatillos] = useState([]);
     const [terminoBusqueda, setTermino] = useState("");
     const [bandera, setBandera] = useState(false);
-    const [platilloEncontrado, setPlatilloEncontrado] = useState();
+    const [platillosEncontrados, setPlatilloEncontrado] = useState([]);
 
     useEffect(() => {
         traerPlatos();
@@ -25,24 +25,25 @@ const Platos = ({ navigation }) => {
     }
 
     const buscar = () => {
-        let resultado = platillos.filter(item => item.nombre == terminoBusqueda.trim())[0];
+        let resultado = platillos.filter(item => item.nombre == terminoBusqueda.trim());
 
-        if(!resultado){
-            resultado = platillos.filter(item => item.tipo == terminoBusqueda.trim())[0];
+        if(resultado.length == 0){
+            resultado = platillos.filter(item => item.tipo == terminoBusqueda.trim());
+            console.log(resultado);
         }
         
-        if(!resultado){
+        if(resultado.length == 0){
             for(let i = 0; i < platillos.length; i++){
                 let ingredientes = platillos[i].ingredientes;
-                let valor = ingredientes.filter(item => item === terminoBusqueda);
+                let valor = ingredientes.filter(item => item === terminoBusqueda.trim());
                 
                 if(valor.length != 0){
-                    resultado = platillos[i];
+                    resultado.push(platillos[i]);
                 }
             }
 
         }
-        if (resultado){
+        if (resultado.length != 0){
             setPlatilloEncontrado(resultado);
             setBandera(true);
         }
@@ -75,12 +76,16 @@ const Platos = ({ navigation }) => {
                 <Button title="Buscar" onPress={buscar} />
             </View>
             {bandera == true ?
-                (<TouchableOpacity style={styles.platoCard} onPress={() => navigation.navigate("DetallePlato", { plato: platilloEncontrado })}>
-                    <View style={styles.platoInfo}>
-                        <Image source={{ uri: platilloEncontrado.imagen }} style={styles.image} />
-                        <Text style={styles.nombre}>{platilloEncontrado.nombre}</Text>
-                    </View>
-                </TouchableOpacity>)
+                (<>
+                <FlatList
+                    data={platillosEncontrados}
+                    renderItem={renderItem}
+                    keyExtractor={(item) => item.id.toString()}
+                    contentContainerStyle={styles.platoList}
+                    numColumns={2}
+                />
+                </>
+                )
                 :
                 (
                     <ScrollView>
