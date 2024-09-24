@@ -18,7 +18,7 @@ const ListaMaravillas = ({navigation}) =>{
         }
     }
 
-    const renderItem = ({item}) =>{
+    const renderItem = ({item}) =>(
         <TouchableOpacity onPress={() => navigation.navigate("Consejos", {tips: item})}>
             <View style={styles.Lista}>
                 <Image source={{uri: item.imagen}} style={styles.ImagenM}/>
@@ -28,7 +28,7 @@ const ListaMaravillas = ({navigation}) =>{
                 </View>
             </View>
         </TouchableOpacity>
-    }
+    )
 
     return(
         <View style={styles}>
