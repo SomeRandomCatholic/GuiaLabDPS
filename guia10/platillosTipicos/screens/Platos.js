@@ -1,4 +1,4 @@
-import { Text, StyleSheet, View, TextInput, Button, Dimensions, FlatList, TouchableOpacity, Image, ScrollView } from "react-native";
+import { Text, StyleSheet, View, TextInput, Button, Dimensions, FlatList, TouchableOpacity, Image, ScrollView, Alert } from "react-native";
 import { useEffect, useState } from "react";
 
 const windowWidth = Dimensions.get('window').width;
@@ -25,7 +25,31 @@ const Platos = ({ navigation }) => {
     }
 
     const buscar = () => {
+        let resultado = platillos.filter(item => item.nombre == terminoBusqueda.trim())[0];
 
+        if(!resultado){
+            resultado = platillos.filter(item => item.tipo == terminoBusqueda.trim())[0];
+        }
+        
+        if(!resultado){
+            for(let i = 0; i < platillos.length; i++){
+                let ingredientes = platillos[i].ingredientes;
+                let valor = ingredientes.filter(item => item === terminoBusqueda);
+                
+                if(valor.length != 0){
+                    resultado = platillos[i];
+                }
+            }
+
+        }
+        if (resultado){
+            setPlatilloEncontrado(resultado);
+            setBandera(true);
+        }
+        else{
+            Alert.alert("Mensaje", "No se encontró el platillo típico");
+            setBandera(false);
+        }
     }
 
     const renderItem = ({ item }) => (
@@ -94,7 +118,7 @@ const Platos = ({ navigation }) => {
                         />
                         <Text style={styles.tipos}>Para todo momento</Text>
                         <FlatList
-                            data={platillos.filter((item) => item.tipo == "Todo")}
+                            data={platillos.filter((item) => item.tipo == "Para todo momento")}
                             renderItem={renderItem}
                             keyExtractor={(item) => item.id.toString()}
                             contentContainerStyle={styles.platoList}
