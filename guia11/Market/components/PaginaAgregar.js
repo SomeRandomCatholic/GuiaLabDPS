@@ -1,7 +1,6 @@
 import React from "react";
 import {View, Text, TouchableOpacity, Alert, StyleSheet} from 'react-native';
 import {Input} from '@rneui/themed';
-import { Provider } from "react-native-paper";
 
 const PaginaAgregar = ({navigation}) =>{
     const [producto, setProducto] = useState({
@@ -17,7 +16,7 @@ const PaginaAgregar = ({navigation}) =>{
     const isValidCantidad = (cant) => /^\d+$/.test(cant);
     const isValidPrice = (price) => /^([0-9]+\.?[0-9]{0,2})$/.test(price);
 
-    const uri = "";
+    const uri = "https://marketapi-production-8ae0.up.railway.app";
 
     const guardar = () =>{
         if(!isValidNombre(producto.nombre)){

@@ -6,7 +6,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 const PantallaInicio = ({ navigation }) => {
     const [usuario, setUsuario] = useState("");
     const [contrasena, setContrasena] = useState("");
-    const uri = "URI";
+    const uri = "https://marketapi-production-8ae0.up.railway.app";
     const entrar = () => {
         if (!usuario || !contrasena) {
             Alert.alert("Aviso", "No introdujo datos");

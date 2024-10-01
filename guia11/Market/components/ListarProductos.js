@@ -2,13 +2,12 @@ import React, { useState, useEffect } from "react";
 import { View, Text, Image, TouchableOpacity, Alert, FlatList, StyleSheet } from "react-native";
 import { Input, normalize } from '@rneui/themed';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import { List } from "react-native-paper";
 
 const ListarProductos = ({ navigation }) => {
     const [elementos, setEleementos] = useState([]);
     const [total, setTotal] = useState(0);
 
-    const uri = "";
+    const uri = "https://marketapi-production-8ae0.up.railway.app";
 
     useEffect(() => {
         cargarRegistros();

@@ -8,7 +8,7 @@ const PaginaDetalle = ({ route, navigation }) => {
     const [cargando, setCargando] = useState(true);
     const [error, setError] = useState(null);
 
-    const uri = "";
+    const uri = "https://marketapi-production-8ae0.up.railway.app";
     const endpoint = `${uri}/productos/${route.params?.id}`;
 
     useEffect(() => {
