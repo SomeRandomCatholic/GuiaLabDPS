@@ -60,7 +60,7 @@ const PaginaDetalle = ({ route, navigation }) => {
         const body = {
             name: producto.nombre,
             description: producto.descripcion,
-            price_costo: parseFloat(producto.precio_costo),
+            price_cost: parseFloat(producto.precio_costo),
             price_sale: parseFloat(producto.precio_venta),
             quantity: parseInt(producto.cantidad, 10),
             image: producto.fotografia,

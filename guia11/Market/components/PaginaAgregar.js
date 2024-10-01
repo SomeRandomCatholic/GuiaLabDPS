@@ -1,13 +1,13 @@
-import React from "react";
-import {View, Text, TouchableOpacity, Alert, StyleSheet} from 'react-native';
-import {Input} from '@rneui/themed';
+import React, { useState } from "react";
+import { View, Text, TouchableOpacity, Alert, StyleSheet } from 'react-native';
+import { Input } from '@rneui/themed';
 
-const PaginaAgregar = ({navigation}) =>{
+const PaginaAgregar = ({ navigation }) => {
     const [producto, setProducto] = useState({
         nombre: '',
         descripcion: '',
         preciodeventa: '',
-        prediodecosto: '',
+        preciodecosto: '',
         cantidad: '',
         fotografia: ''
     });
@@ -18,19 +18,19 @@ const PaginaAgregar = ({navigation}) =>{
 
     const uri = "https://marketapi-production-8ae0.up.railway.app";
 
-    const guardar = () =>{
-        if(!isValidNombre(producto.nombre)){
+    const guardar = () => {
+        if (!isValidNombre(producto.nombre)) {
             Alert.alert("Error", "Nombre inválido. Debe conteneer solo letras y espacios.")
             return;
         }
 
-        if(!isValidCantidad(producto.cantidad)){
+        if (!isValidCantidad(producto.cantidad)) {
             Alert.alert("Error", "Cantidad inválida. Debe contener solo números enteros");
             return;
         }
 
-        if(!isValidPrice(producto.preciodecosto) || !isValidPrice(producto.preciodeventa)){
-            Alert.alert("Error","Precio inválido. debe contener solo dos decimales.");
+        if (!isValidPrice(producto.preciodecosto) || !isValidPrice(producto.preciodeventa)) {
+            Alert.alert("Error", "Precio inválido. debe contener solo dos decimales.");
             return;
         }
 
@@ -46,37 +46,37 @@ const PaginaAgregar = ({navigation}) =>{
         fetch(`${uri}/productos`, {
             method: 'POST',
             headers: {
-                'Content-Type:': 'application/json',
+                'Content-Type': 'application/json',
             },
             body: JSON.stringify(body),
         })
-        .then( (response) =>{
-            if(!response.ok){
-                throw new Error("Error en la respuesta: " + response.statusText);
-            }
-            return response.json();
-        })
-        .then((responseJSon) => {
-            console.log("Respuesta del servidor: ", responseJSon);
-            const mensaje = responseJSon.message;
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error("Error en la respuesta: " + response.statusText);
+                }
+                return response.json();
+            })
+            .then((responseJSon) => {
+                console.log("Respuesta del servidor: ", responseJSon);
+                const mensaje = responseJSon.message;
 
-            if(!mensaje){
-                Alert.alert("Error", "Error al agregar!");
-            } else{
-                Alert.alert("Éxito", mensaje);
-                navigation.goBack();
-            }
-        })
+                if (!mensaje) {
+                    Alert.alert("Error", "Error al agregar!");
+                } else {
+                    Alert.alert("Éxito", mensaje);
+                    navigation.goBack();
+                }
+            })
     };
 
-    return(
+    return (
         <View style={styles.container}>
-            <Input label="Nombre" value={producto.nombre} onChangeText={text => setProducto({...producto, nombre: text})} />
-            <Input label="Descripción" value={producto.descripcion} onChangeText={text => setProducto({...producto, descripcion: text})} />
-            <Input label="Precio de costo" value={producto.preciodecosto} onChangeText={text => setProducto({...producto, preciodecosto: text})} />
-            <Input label="Precio de venta" value={producto.preciodeventa} onChangeText={text => setProducto({...producto, preciodeventa: text})} />
-            <Input label="Cantidad" value={producto.cantidad} onChangeText={text => setProducto({...producto, cantidad: text})} />
-            <Input label="Fotografía" value={producto.fotografia} onChangeText={text => setProducto({...producto, fotografia: text})} />
+            <Input label="Nombre" value={producto.nombre} onChangeText={text => setProducto({ ...producto, nombre: text })} />
+            <Input label="Descripción" value={producto.descripcion} onChangeText={text => setProducto({ ...producto, descripcion: text })} />
+            <Input label="Precio de costo" value={producto.preciodecosto} onChangeText={text => setProducto({ ...producto, preciodecosto: text })} />
+            <Input label="Precio de venta" value={producto.preciodeventa} onChangeText={text => setProducto({ ...producto, preciodeventa: text })} />
+            <Input label="Cantidad" value={producto.cantidad} onChangeText={text => setProducto({ ...producto, cantidad: text })} />
+            <Input label="Fotografía" value={producto.fotografia} onChangeText={text => setProducto({ ...producto, fotografia: text })} />
 
             <TouchableOpacity style={styles.button} onPress={guardar}>
                 <Text style={styles.buttonText}>Guardar</Text>
@@ -92,14 +92,14 @@ const styles = StyleSheet.create({
         flex: 1,
         padding: 20,
     },
-    button:{
+    button: {
         height: 50,
         backgroundColor: 'red',
         borderRadius: 5,
         justifyContent: 'center',
         marginTop: 15
     },
-    buttonText:{
+    buttonText: {
         color: 'white',
         fontSize: 22,
         textAlign: 'center',
