@@ -57,6 +57,9 @@ export default function App() {
           <Text>Last Notification:</Text>
           <Text>{notification.request.content.title}</Text>
           <Text>{notification.request.content.body}</Text>
+          <Text>Nombre: {notification.request.content.data.nombre}</Text>
+          <Text>Edad: {notification.request.content.data.edad}</Text>
+
         </View>
       )}
     </View>
