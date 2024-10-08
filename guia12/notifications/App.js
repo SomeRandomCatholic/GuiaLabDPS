@@ -28,7 +28,7 @@ export default function App() {
         setNotification(notification);
       });
 
-    responseListener.current = Notifications.addNotificationReceivedListener(
+    responseListener.current = Notifications.addNotificationResponseReceivedListener(
       (response) => {
         console.log(response);
       }
@@ -77,7 +77,7 @@ async function schedulePushNotification() {
 async function registerForPushNotificationAsync() {
   let token;
   if (Device.isDevice) {
-    const { status: existingStatus } = await Notifications.getPemissionsAsync();
+    const { status: existingStatus } = await Notifications.getPermissionsAsync();
     let finalStatus = existingStatus;
 
     if (existingStatus !== 'granted') {
